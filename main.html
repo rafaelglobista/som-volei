@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botões Sonoros</title>
+</head>
+<body>
+
+<!-- Adicione botões com identificadores únicos -->
+<button id="botao1">Errou</button>
+<button id="botao2">Orra Meu</button>
+<button id="botao3">Botão 3</button>
+
+<!-- Adicione áudio oculto para ser reproduzido -->
+<audio id="som1" src="sons/errou_3.mp3"></audio>
+<audio id="som2" src="sons/porra-meu-ala.mp3"></audio>
+<audio id="som3" src="caminho/do/seu/som3.mp3"></audio>
+
+<!-- Adicione script JavaScript para lidar com os cliques -->
+<script>
+    // Função para reproduzir o som com base no botão clicado
+    function reproduzirSom(botaoId, somId) {
+        var botao = document.getElementById(botaoId);
+        var som = document.getElementById(somId);
+
+        botao.addEventListener("click", function() {
+            som.currentTime = 0; // Reinicia o áudio, se já estiver em execução
+            som.play();
+        });
+    }
+
+    // Associe cada botão ao seu respectivo som
+    reproduzirSom("botao1", "som1");
+    reproduzirSom("botao2", "som2");
+    reproduzirSom("botao3", "som3");
+</script>
+
+</body>
+</html>
